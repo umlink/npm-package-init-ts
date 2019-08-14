@@ -1,0 +1,32 @@
+{
+  "name": "npm-shell-ts",
+  "version": "1.0.0",
+  "description": "npm初始化壳",
+  "main": "dist/test-file.umd.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "rollup -c build/rollup.config.js --watch",
+    "build": "rollup -c build/rollup.config.js",
+    "lint": "tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'",
+    "tsc": "npm run tsc"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "author": "zhaofulin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "jest": "^24.8.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^1.19.4",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.3"
+  }
+}

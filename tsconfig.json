@@ -4,6 +4,7 @@
     "module": "es2015",
     "declaration": true,
     "declarationDir": "dist",
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "outDir": "dist",
     "strict": true,

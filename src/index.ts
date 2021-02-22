@@ -1,12 +1,9 @@
-import options from './interface/options';
-const testMainFun = () => {
-  const _options: options = {
-    name: '小明',
-    age: 18,
-    height: '180cm',
-    sex: '男',
+function debounce<T extends Function>(fn: T, delay: number = 0) {
+  let _timer: any
+  const tempFunc = (...args: any) => {
+    clearTimeout(_timer);
+    _timer = setTimeout(() => fn(...args), delay)
   }
-  return _options
+  return <T>(<any>tempFunc)
 }
-
-export default testMainFun
+export default debounce

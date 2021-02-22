@@ -2,7 +2,7 @@ import typescript from 'rollup-plugin-typescript'
 import resolve from 'rollup-plugin-node-resolve'
 
 // npm 入口文件名
-const _fileName = 'test-file'
+const _fileName = 'debouce'
 
 export default {
   input: 'src/index.ts',

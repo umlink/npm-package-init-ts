@@ -1,32 +1,30 @@
 {
-  "name": "npm-shell-ts",
+  "name": "npm-rullup-demo",
   "version": "1.0.0",
   "description": "npm初始化壳",
-  "main": "dist/test-file.umd.js",
+  "main": "dist/index.umd.js",
   "scripts": {
     "test": "jest",
-    "dev": "rollup -c build/rollup.config.js --watch",
-    "build": "rollup -c build/rollup.config.js",
-    "lint": "tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'",
-    "tsc": "npm run tsc"
+    "dev": "cross-env CODE_ENV=dev rollup -c build/rollup.config.js --watch",
+    "build": "cross-env CODE_ENV=production rollup -c build/rollup.config.js"
   },
   "pre-commit": [
-    "lint",
     "test"
   ],
   "author": "zhaofulin",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^24.0.17",
-    "jest": "^24.8.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.5.0",
+    "cross-env": "^7.0.2",
+    "husky": "^4.2.5",
+    "jest": "^24.9.0",
     "pre-commit": "^1.2.2",
     "rollup": "^1.19.4",
-    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.18.0",
-    "tslint-config-airbnb": "^5.11.1",
-    "typescript": "^3.5.3"
+    "rollup-plugin-terser": "^5.3.0"
   }
 }

@@ -1,18 +1,9 @@
 module.exports = {
-  moduleFileExtensions: [
-    'ts',
-    'tsx',
-    'js',
-  ],
+  moduleFileExtensions: ['js'],
+  testMatch: ["<rootDir>/test/**/*.(spec|test).js"],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    // 将.js后缀的文件使用babel-jest处理
+    "^.+\\.js$": "babel-jest"
   },
-  globals: {
-    'ts-jest': {
-      tsConfig: 'tsconfig.json',
-    },
-  },
-  testMatch: [
-    '**/test/**/*.+(ts|tsx|js)',
-  ],
+  testPathIgnorePatterns: [ "/node_modules/" ]
 };
